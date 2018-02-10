@@ -1,0 +1,205 @@
+*
+{
+    padding : 0;
+    margin : 0;
+}
+
+/* On définit les deux conteneurs */
+.conteneur
+{
+    width : 1775px;
+    margin : auto;
+    font-size : 0.8em;
+}
+
+.conteneur_clear
+{
+    width : 1775px;	
+    height : 30px;
+}
+
+/* On déclare les deux tableaux pour les onglets d'artefacts */
+.conteneur_tableau_gauche
+{
+    float : left;
+}
+
+.conteneur_tableau_droit
+{
+    width : 1125px;
+    float : right;
+    overflow : auto;
+}
+
+/* Les trois types d'armées existantes, on ne veut afficher qu'un type par onglet */
+.off_unique
+{
+}
+
+.off_majeur
+{
+    display : none;
+}
+
+.off_mineur
+{
+    display : none;
+}
+
+/* On définit les caractéristiques des tableaux */
+table
+{
+    border-collapse : collapse;
+}
+
+thead
+{
+    padding : 0;
+    margin : 0;
+}
+
+tbody
+{
+    overflow : auto;
+    overflow-x: hidden;
+}
+
+.tableau_gauche
+{
+    overflow-y : hidden;
+    table-layout : fixed;
+}
+
+.tableau_gauche tr
+{
+    width : 100%;
+}
+
+.th_gauche_pas_de_bordure_basse
+{
+    border-bottom : 0px;
+}
+
+th
+{
+    font-weight : bold;
+    background-color : #d2d2d2;
+}
+
+td, th
+{
+    border : 1px solid grey;
+    font-family : 'Arial';
+    padding : 3px;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* On déclare les différens types de cases des tableaux */
+.case_artefact
+{
+    height : 60px;
+}
+
+.case_grande
+{
+    width : 194px;
+    max-width : 194px;
+    overflow : hidden;
+}
+
+.case_moyenne
+{
+    width : 119px;
+    max-width : 119px;
+    overflow : hidden;
+}
+
+.case_normale
+{
+    width : 96px;
+    max-width : 96px;
+    overflow : hidden;
+}
+
+.case_petite
+{
+    width : 44px;
+    max-width : 44px;
+    overflow : hidden;
+}
+
+.case_vide
+{
+    border : none;
+    background-color : white;
+}
+
+.case_th_en_td
+{
+    font-weight : normal;
+    background-color : white;
+}
+
+.case_td_en_th
+{
+    font-weight : bold;
+    background-color : #d2d2d2;
+}
+
+/* On déclare les différentes classes de texte et de bloc */
+.texte_centrer
+{
+    text-align : center;
+}
+
+p
+{
+    padding : 5px;
+}
+
+ul
+{
+    list-style-position : inside;
+    margin : 15px;
+}
+
+label
+{
+	width : 200px;
+	float : left;
+}
+
+input
+{
+	width : 150px;
+}
+
+input[type=submit]
+{
+	width : 154px;
+}
+
+select
+{
+	width : 154px;
+}
+
+input[type=checkbox]
+{
+    margin : 0;
+    padding : 0;
+    width : 100%;
+}
+
+.lien
+{
+    color : blue;
+    text-decoration : underline;
+}
+
+.lien:hover
+{
+    cursor : pointer;
+}
