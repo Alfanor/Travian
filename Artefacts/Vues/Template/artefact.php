@@ -160,27 +160,27 @@
 		<div id="onglets-4">
 			<?php
 			if($success == true && $action == 1)
-			echo '<p>Les artefacts ont été mis à jour.</p>';
+				echo '<p>Les artefacts ont été mis à jour.</p>';
 
 			if($success == false && $action == 1)
-			echo '<p>Une erreur est survenue, vérifiez votre saisie.</p>';
+				echo '<p>Une erreur est survenue, vérifiez votre saisie.</p>';
 			?>
 
 			<p>Afin d'enregistrer les coordonnées des artefacts, veuillez vous rendre dans une CDT, dans l'onglet majeur puis l'onglet mineur et respecter les étapes suivants :</p>
 			<ul class="normale">
-			<li>Cliquer droit sur la page</li>
-			<li>Afficher le code source</li>
-			<li>Ctrl + a</li>
-			<li>Ctrl + c</li>
-			<li>Retourner sur la page actuelle</li>
-			<li>Ctrl + v dans le champ de saisi ci-dessous</li>
-			<li>Valider le formulaire</li>
+				<li>Cliquer droit sur la page</li>
+				<li>Afficher le code source</li>
+				<li>Ctrl + a</li>
+				<li>Ctrl + c</li>
+				<li>Retourner sur la page actuelle</li>
+				<li>Ctrl + v dans le champ de saisi ci-dessous</li>
+				<li>Valider le formulaire</li>
 			</ul>
 
 			<form method="post" action="?p=artefact&amp;action=1">
-			<textarea name="code" style="width : 500px; height : 300px;"></textarea><br/><br />
+				<textarea name="code" style="width : 500px; height : 300px;"></textarea><br/><br />
 
-			<input type="submit" value="Envoyer" />
+				<input type="submit" value="Envoyer" />
 			</form>
 		</div>	
 

@@ -21,7 +21,7 @@ class Artefact
 
     public static function insererListe($_SQL, $id_artes, $noms_artes, $liste_coordonnees)
     {
-        $req = 'INSERT INTO artefacts (id, nom, x, y, type) VALUES ';
+        $req = 'INSERT INTO artefacts (id, nom, x, y, type, valider) VALUES ';
 
         for($i = 0; $i < count($noms_artes); $i++)
         {
@@ -37,10 +37,10 @@ class Artefact
                 $type = 'unique';
         
             if($i == (count($noms_artes)- 1))
-                $req .= '(' . $id_artes[$i] . ', "' . $noms_artes[$i] . '", ' . $position['x'] . ', ' . $position['y'] . ', "' . $type . '")';
+                $req .= '(' . $id_artes[$i] . ', "' . $noms_artes[$i] . '", ' . $position['x'] . ', ' . $position['y'] . ', "' . $type . '", 0)';
             
             else				
-                $req .= '(' . $id_artes[$i] . ', "' . $noms_artes[$i] . '", ' . $position['x'] . ', ' . $position['y'] . ', "' . $type . '"), ';
+                $req .= '(' . $id_artes[$i] . ', "' . $noms_artes[$i] . '", ' . $position['x'] . ', ' . $position['y'] . ', "' . $type . '", 0), ';
         }
 
         $req .= 'ON DUPLICATE KEY UPDATE x=VALUES(x), y=VALUES(y)';
@@ -57,7 +57,7 @@ class Artefact
 	{
 		$retour = array();
 		
-		$req = 'SELECT * FROM artefacts WHERE x > -50 && y > -50';
+		$req = 'SELECT * FROM artefacts';
 		
 		foreach($_SQL->query($req) as $artefact)
 		{
@@ -97,7 +97,7 @@ class Artefact
 
 	public function save()
 	{
-		$req = 'INSERT INTO artefacts (id, nom, x, y, type) VALUES (:id, :nom, :x, :y, :type)';
+		$req = 'INSERT INTO artefacts (id, nom, x, y, type, valider) VALUES (:id, :nom, :x, :y, :type, 0)';
 
 		$req .= 'ON DUPLICATE KEY UPDATE x=VALUES(x), y=VALUES(y)';
 
@@ -115,7 +115,7 @@ class Artefact
             return true;
 			
 		else
-			return false;
+            return false;
 	}
 	
 	public function setId($id)

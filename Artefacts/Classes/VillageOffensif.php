@@ -46,7 +46,7 @@ class VillageOffensif
 	
 	public function save()
 	{
-		$req = 'INSERT INTO village_offensif(proprietaire, x, y, pt, bottes, cible, cdt) VALUES (:proprietaire, :x, :y, :pt, :bottes, :cible, :cdt)';
+		$req = 'INSERT INTO village_offensif(proprietaire, x, y, pt, bottes, cible, cdt, valider) VALUES (:proprietaire, :x, :y, :pt, :bottes, :cible, :cdt, :valider)';
 
 		$req .= 'ON DUPLICATE KEY UPDATE pt=VALUES(pt), bottes=VALUES(bottes), cible=VALUES(cible), cdt=VALUES(cdt)';
 
@@ -58,7 +58,8 @@ class VillageOffensif
                                                 ':pt' => $this->pt,
                                                 ':bottes' => $this->bottes,
                                                 ':cible' => $this->cible,
-                                                ':cdt' => $this->cdt));
+												':cdt' => $this->cdt,
+												':valider' => 0));
 							
 		if($rep->rowCount() == 1)
 			return true;
