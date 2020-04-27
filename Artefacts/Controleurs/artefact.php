@@ -35,9 +35,6 @@ else if($action == 2)
     {
         if(($_POST['x'] < 401) && ($_POST['x'] > -401) && ($_POST['y'] < 401) && ($_POST['y'] > -401) && in_array($_POST['bottes'], array('aucune', 'mercenaire', 'guerrier', 'archer')) && in_array($_POST['cible'], array('unique', 'majeur', 'mineur', 'tournante')) && ($_POST['pt'] >= 0) && ($_POST['pt'] <= 20) && ($_POST['cdt'] == 10 || $_POST['cdt'] == 20 || $_POST['cdt'] == 0))
         {
-            if($_POST['bottes'] == 'aucune')
-                $_POST['bottes'] = null;
-
             // Si tout semble bon on enregistre sans chercher à comprendre
             $village = new VillageOffensif($_SQL);
             $village->setProprietaire($_POST['proprietaire']);

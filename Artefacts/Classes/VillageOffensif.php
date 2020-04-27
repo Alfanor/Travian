@@ -13,7 +13,7 @@ class VillageOffensif
 	
 	private $connexion;
     
-    public static $vitesse_botte = array('mercenaire' => 25, 'guerrier' => 50, 'archer' => 75);
+    public static $vitesse_botte = array('aucune' => 0, 'mercenaire' => 25, 'guerrier' => 50, 'archer' => 75);
 	
 	public function __construct(&$_SQL)
 	{

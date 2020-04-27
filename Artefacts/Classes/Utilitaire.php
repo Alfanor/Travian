@@ -18,8 +18,7 @@ class Utilitaire
             
             $buffer_vitesse = $vitesse * (1 + $pt / 5);
             
-            if($botte != null)
-                $buffer_vitesse += ($vitesse * (VillageOffensif::$vitesse_botte[$botte] / 100));
+            $buffer_vitesse += ($vitesse * (VillageOffensif::$vitesse_botte[$botte] / 100));
             
             $duree_trajet_heure += floor($buffer_distance / $buffer_vitesse);
             $duree_trajet_minute += floor((fmod($buffer_distance, $buffer_vitesse) / $buffer_vitesse) * 60);
@@ -43,8 +42,8 @@ class Utilitaire
         if($id == 0)
             return array('x' => 0, 'y' => 0);
 
-        $x = -400 + ($id % 801) - 1;
-        $y = 400 - floor($id / 801);
+        $x = -200 + ($id % 401) - 1;
+        $y = 200 - floor($id / 401);
         
         return array('x' => $x, 'y' => $y);
     }
