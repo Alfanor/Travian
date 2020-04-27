@@ -16,7 +16,7 @@ class Utilitaire
         {
             $buffer_distance = $distance - 20;
             
-            $buffer_vitesse = $vitesse * (1 + $pt / 10);
+            $buffer_vitesse = $vitesse * (1 + $pt / 5);
             
             if($botte != null)
                 $buffer_vitesse += ($vitesse * (VillageOffensif::$vitesse_botte[$botte] / 100));
